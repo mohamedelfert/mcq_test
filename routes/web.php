@@ -33,8 +33,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Adm
     });
 
 
-//    Route::resource('users', 'UserController');
-//    Route::resource('roles', 'RoleController');
+    Route::resource('users', 'UserController');
+    Route::resource('roles', 'RoleController');
 
     //================= this route for change language ( ar - en ) ===================//
     Route::get('lang/{lang}', function ($lang) {

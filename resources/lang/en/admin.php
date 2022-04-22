@@ -4,6 +4,7 @@ return [
     'add_user' => 'Add New User',
     'edit_user' => 'Edit User',
     'user_email' => 'User E-mail',
+    'user_phone' => 'User Phone',
     'user_status' => 'Status',
     'user_role' => 'User Role',
     'delete_user' => 'User Delete',
