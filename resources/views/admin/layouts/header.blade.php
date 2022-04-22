@@ -49,7 +49,7 @@
         <link rel="stylesheet" href="{{ url('/design/admin/plugins/summernote/summernote-bs4.min.css') }}">
 
         <!-- site icon -->
-        <link rel="icon" href="">
+        <link rel="icon" href="{{ url('/assets/images/icon.jpg') }}">
         <!-- site icon -->
 
         <!-- myFunctions js -->

@@ -14,7 +14,7 @@
 <li class="dropdown user user-menu">
     <a class="nav-link nav-pill user-avatar" data-toggle="dropdown" href="#" role="button"
        aria-haspopup="true" aria-expanded="false">
-        <img src="{{ url('/') }}/design/admin/dist/img/user2-160x160.jpg" class="img-circle user-image elevation-2" alt="User Image">
+        <img src="{{ url('/assets/images/male.png') }}" class="img-circle user-image elevation-2" alt="User Image">
     </a>
     <ul class="dropdown-menu">
         <!-- Menu Footer-->
