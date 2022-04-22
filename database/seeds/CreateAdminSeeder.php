@@ -25,7 +25,7 @@ class CreateAdminSeeder extends Seeder
             'status'     => 'active',
         ]);
 
-        $role = Role::create(['name' => 'superAdmin']);
+        $role = Role::create(['name' => 'admin']);
 
         $permissions = Permission::pluck('id','id')->all();
 

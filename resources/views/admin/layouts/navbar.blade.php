@@ -71,6 +71,7 @@
                         <p>{{ trans('main.dashboard') }}</p>
                     </a>
                 </li>
+                @can('user-list')
                 <li class="nav-item {{ active_menu('users')[0] }}">
                     <a href="#" class="nav-link">
                         <i class="fas fa-user-shield"></i>
@@ -94,6 +95,7 @@
                         </li>
                     </ul>
                 </li>
+                @endcan
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
