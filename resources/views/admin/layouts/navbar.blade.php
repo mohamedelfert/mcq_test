@@ -71,6 +71,25 @@
                         <p>{{ trans('main.dashboard') }}</p>
                     </a>
                 </li>
+                @can('topic-list')
+                    <li class="nav-item {{ active_menu('topics')[0] }}">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-book-open"></i>
+                            <p>
+                                {{ trans('main.topics') }}
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview" {{ active_menu('topics')[1] }}>
+                            <li class="nav-item">
+                                <a href="{{ adminUrl('topics') }}" class="nav-link">
+                                    <i class="fas fa-list-ol"></i>
+                                    <p>{{ trans('main.topics_list') }}</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endcan
                 @can('user-list')
                 <li class="nav-item {{ active_menu('users')[0] }}">
                     <a href="#" class="nav-link">

@@ -1,5 +1,11 @@
 <?php
 return [
+    'add_topic' => 'Add Topic',
+    'edit_topic' => 'Edit Topic',
+    'delete_topic' => 'Delete Topic',
+    'name_ar' => 'Topic Name Arabic',
+    'name_en' => 'Topic Name English',
+
     'user_name' => 'Name',
     'add_user' => 'Add New User',
     'edit_user' => 'Edit User',

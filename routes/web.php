@@ -33,6 +33,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'auto_check_permissi
     });
 
 
+    Route::resource('topics', 'TopicController');
+
     Route::resource('users', 'UserController');
     Route::resource('roles', 'RoleController');
 
