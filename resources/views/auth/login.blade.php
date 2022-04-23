@@ -64,6 +64,15 @@
                                 @endif
                             </div>
                         </div>
+
+                        <h5 class="text-center">Or</h5>
+
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <a href="#" class="btn btn-primary">Login with Facebook</a>
+                                <a href="#" class="btn btn-success">Login with Google</a>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
