@@ -115,6 +115,20 @@
                         </ul>
                     </li>
                 @endcan
+                @can('test-list')
+                    <li class="nav-item">
+                        <a href="{{ adminUrl('tests') }}" class="nav-link">
+                            <i class="nav-icon fas fa-question"></i>
+                            <p>{{ trans('main.tests') }}</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ adminUrl('results') }}" class="nav-link">
+                            <i class="nav-icon fas fa-question-circle"></i>
+                            <p>{{ trans('main.results') }}</p>
+                        </a>
+                    </li>
+                @endcan
                 @can('user-list')
                 <li class="nav-item {{ active_menu('users')[0] }}">
                     <a href="#" class="nav-link">
