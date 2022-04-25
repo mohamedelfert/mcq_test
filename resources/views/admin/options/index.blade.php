@@ -17,7 +17,7 @@
                             <thead class="text-center">
                             <tr>
                                 <th>#</th>
-                                <th>{{trans('admin.question_ar')}}</th>
+                                <th>{{ session('lang') === 'ar' ? trans('admin.question_ar') : trans('admin.question_en') }}</th>
                                 <th>{{trans('admin.option')}}</th>
                                 <th>{{trans('admin.point')}}</th>
                                 <th>{{trans('admin.control')}}</th>
@@ -28,7 +28,7 @@
                             @foreach($options as $option)
                                 <tr>
                                     <td>{{$i++}}</td>
-                                    <td>{{$option->question->question_ar}}</td>
+                                    <td>{{session('lang') == 'ar' ? $option->question->question_ar : $option->question->question_en}}</td>
                                     <td>{{$option->option}}</td>
                                     <td>{{$option->point}}</td>
                                     <td>

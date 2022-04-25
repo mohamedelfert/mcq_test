@@ -30,8 +30,8 @@
                                 <tr>
                                     <td>{{ $i++ }}</td>
                                     <td>{{ $question->topic->name_ar }}</td>
-                                    <td>{{ $question->question_ar }}</td>
-                                    <td>{{ $question->question_en }}</td>
+                                    <td>{{ mb_strlen($question->question_ar) > 30 ? mb_substr($question->question_ar,0,30) : $question->question_ar }}</td>
+                                    <td>{{ mb_strlen($question->question_en) > 30 ? mb_substr($question->question_en,0,30) : $question->question_en }}</td>
                                     <td>
                                         <a href="{{ route('questions.edit', $question->id) }}" class="btn btn-sm btn-primary"
                                            title="تعديل"><i class="fas fa-edit"></i>

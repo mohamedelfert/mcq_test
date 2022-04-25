@@ -13,6 +13,8 @@ return [
     'questions' => 'Questions',
     'questions_list' => 'Questions List',
     'questions_options' => 'Questions Options',
+    'tests' => 'New Test',
+    'results' => 'Results',
     'users' => 'Users & Permissions',
     'users_list' => 'Users List',
     'roles_list' => 'Roles List',
