@@ -37,12 +37,13 @@
                                 <tbody>
                                 <tr class="test-option-true text-success">
                                     <th style="width: 10%">Question #{{$i}}</th>
-                                    <th>{{ $result->question->question_ar }}</th>
+                                    <th>{{ $result->question->{'question_' . session('lang')} }}</th>
                                 </tr>
                                 <tr>
                                     <td>Topic</td>
                                     <td>
-                                        <div class="code_snippet">{{ $result->question->topic->name_ar }}</div>
+                                        <div
+                                            class="code_snippet">{{ $result->question->topic->{'name_' . session('lang')} }}</div>
                                     </td>
                                 </tr>
                                 <tr>
@@ -58,11 +59,10 @@
                                             @foreach ($result->question->options as $option)
                                                 <li style="@if($option->point === 1) font-weight: bold; @endif">
                                                     {{ $option->option}}
-                                                    @if ($option->point === 1)<em style="color: red;">( correct answer
-                                                        )</em> @endif
-                                                    @if ($result->option_id === $option->id)<em
-                                                        style="color: blue;font-weight: bold;">(
-                                                        your answer )</em> @endif
+                                                    @if ($option->point === 1)<em style="color: red;">
+                                                        ( correct answer )</em> @endif
+                                                    @if ($result->option_id === $option->id)
+                                                        <em style="color: blue;font-weight: bold;">( your answer )</em> @endif
                                                 </li>
                                             @endforeach
                                         </ul>
