@@ -1,6 +1,5 @@
 <?php
 
-use Database\Seeders\CreateAdminSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,6 +13,7 @@ class DatabaseSeeder extends Seeder
     {
 //         $this->call(AdminSeeder::class);
         $this->call(\Database\Seeders\CreateAdminSeeder::class);
+        $this->call(\Database\Seeders\CreateUserSeeder::class);
         $this->call(\Database\Seeders\PermissionTableSeeder::class);
     }
 }
