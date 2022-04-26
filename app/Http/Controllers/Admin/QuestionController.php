@@ -79,8 +79,8 @@ class QuestionController extends Controller
             $question = Question::create($request->all());
 
             foreach ($request->input() as $key => $value) {
-                if (strpos($key, 'option') !== false && $value !== '') {
-                    $status = $request->input('correct_option') === $key ? 1 : 0;
+                if (strpos($key, 'option') !== false && $value != '') {
+                    $status = $request->input('correct_option') == $key ? 1 : 0;
                     QuestionOption::create([
                         'option' => $value,
                         'point' => $status,
