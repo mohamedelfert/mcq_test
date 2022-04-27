@@ -35,7 +35,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'auto_check_permissi
         return view('admin.home');
     });
 
-
     Route::resource('topics', 'TopicController');
     Route::resource('questions', 'QuestionController');
     Route::resource('options', 'QuestionOptionController');
