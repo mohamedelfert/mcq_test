@@ -9,14 +9,14 @@
                         @if (count($results) > 0)
                             <table id="datatable" class="table table-striped table-bordered p-0">
                                 <thead class="text-center">
-                                    <tr>
-                                        <th>#</th>
-                                        <th>{{trans('admin.user_name')}}</th>
-                                        <th>{{trans('admin.test_id')}}</th>
-                                        <th>{{trans('admin.date')}}</th>
-                                        <th>{{trans('admin.result')}}</th>
-                                        <th>{{trans('admin.control')}}</th>
-                                    </tr>
+                                <tr>
+                                    <th>#</th>
+                                    <th>{{trans('admin.user_name')}}</th>
+                                    <th>{{trans('admin.test_id')}}</th>
+                                    <th>{{trans('admin.date')}}</th>
+                                    <th>{{trans('admin.result')}}</th>
+                                    <th>{{trans('admin.control')}}</th>
+                                </tr>
                                 </thead>
                                 <tbody class="text-center">
                                 <?php $i = 1; ?>
@@ -26,7 +26,15 @@
                                         <td>{{ $result->user->name }}</td>
                                         <td>{{ $result->id }}</td>
                                         <td>{{ $result->created_at }}</td>
-                                        <td>{{ $result->result }} / 10</td>
+                                        <td>
+                                            @if($result->result < 5)
+                                                <label class="badge badge-danger">Failed</label>
+                                                <label class="badge badge-danger">{{ $result->result }} / 10</label>
+                                            @else
+                                                <label class="badge badge-success">Success</label>
+                                                <label class="badge badge-success">{{ $result->result }} / 10</label>
+                                            @endif
+                                        </td>
                                         <td>
                                             <a class="btn btn-primary" href="{{ route('results.show',$result->id) }}">show</a>
                                         </td>
@@ -37,19 +45,19 @@
                         @else
                             <table id="datatable" class="table table-striped table-bordered p-0">
                                 <thead class="text-center">
-                                    <tr>
-                                        <th>#</th>
-                                        <th>{{trans('admin.user_name')}}</th>
-                                        <th>{{trans('admin.test_id')}}</th>
-                                        <th>{{trans('admin.date')}}</th>
-                                        <th>{{trans('admin.result')}}</th>
-                                        <th>{{trans('admin.control')}}</th>
-                                    </tr>
+                                <tr>
+                                    <th>#</th>
+                                    <th>{{trans('admin.user_name')}}</th>
+                                    <th>{{trans('admin.test_id')}}</th>
+                                    <th>{{trans('admin.date')}}</th>
+                                    <th>{{trans('admin.result')}}</th>
+                                    <th>{{trans('admin.control')}}</th>
+                                </tr>
                                 </thead>
                                 <tbody class="text-center">
-                                    <tr>
-                                        <td colspan="6" class="text-center text-danger">لا يوجد اي نتائج اختبارات</td>
-                                    </tr>
+                                <tr>
+                                    <td colspan="6" class="text-center text-danger">لا يوجد اي نتائج اختبارات</td>
+                                </tr>
                                 </tbody>
                             </table>
                         @endif

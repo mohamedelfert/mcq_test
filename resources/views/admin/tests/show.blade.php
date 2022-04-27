@@ -27,7 +27,15 @@
                             </tr>
                             <tr>
                                 <th>Score</th>
-                                <td>{{ $test->result }} / 10</td>
+                                <td>
+                                    @if($test->result < 5)
+                                        <label class="badge badge-danger">Failed</label>
+                                        <label class="badge badge-danger">{{ $test->result }} / 10</label>
+                                    @else
+                                        <label class="badge badge-success">Success</label>
+                                        <label class="badge badge-success">{{ $test->result }} / 10</label>
+                                    @endif
+                                </td>
                             </tr>
                             </tbody>
                         </table>
@@ -62,7 +70,8 @@
                                                     @if ($option->point === 1)<em style="color: red;">
                                                         ( correct answer )</em> @endif
                                                     @if ($result->option_id === $option->id)
-                                                        <em style="color: blue;font-weight: bold;">( your answer )</em> @endif
+                                                        <em style="color: blue;font-weight: bold;">( your answer
+                                                            )</em> @endif
                                                 </li>
                                             @endforeach
                                         </ul>
