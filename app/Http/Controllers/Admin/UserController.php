@@ -131,7 +131,7 @@ class UserController extends Controller
         $rules = [
             'name' => 'required|min:5|unique:users,name,' . $id,
             'email' => 'required|email|unique:users,email,' . $id,
-            'password' => 'required|same:confirm-password',
+            'password' => 'sometimes|nullable|same:confirm-password',
             'phone' => 'required|digits:11|unique:users,phone,' . $id,
             'status' => 'required',
             'role_name' => 'required'
@@ -142,7 +142,7 @@ class UserController extends Controller
             'name.min' => 'يجب ان لايقل اسم المستخدم عن 5 أحرف',
             'email.required' => 'يجب كتابه بريد الكتروني',
             'email.unique' => 'البريد الالكتروني مسجل مسبقا',
-            'password.required' => 'يجب كتابه باسوورد',
+//            'password.required' => 'يجب كتابه باسوورد',
             'password.same' => 'كلمه المرور لا تساوي تاكيد كلمه المرور',
             'phone.required' => 'يجب اضافه رقم الهاتف',
             'phone.unique' => 'رقم الهاتف مسجل مسبقا',

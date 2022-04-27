@@ -25,6 +25,9 @@ Route::get('/admin', function () {
 
 Auth::routes();
 
+Route::get('redirect/{provider}', 'Admin\SocialAuthController@redirect');
+Route::get('callback/{provider}', 'Admin\SocialAuthController@callback');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'auto_check_permission'], 'namespace' => 'Admin'], function () {
