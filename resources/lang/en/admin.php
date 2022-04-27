@@ -30,6 +30,8 @@ return [
     'result' => 'Result',
     'test_message' => 'Answer these 10 questions. There\'s no time limit',
 
+    'provider' => 'Provider',
+    'provider_msg' => 'No Provider',
     'user_name' => 'Name',
     'add_user' => 'Add New User',
     'edit_user' => 'Edit User',
