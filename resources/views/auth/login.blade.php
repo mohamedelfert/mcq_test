@@ -69,8 +69,8 @@
 
                         <div class="row">
                             <div class="col-12 text-center">
-                                <a href="#" class="btn btn-primary">Login with Facebook</a>
-                                <a href="#" class="btn btn-success">Login with Google</a>
+                                <a href="{{ url('redirect/facebook') }}" class="btn btn-primary">Login with Facebook</a>
+                                <a href="{{ url('redirect/google') }}" class="btn btn-success">Login with Google</a>
                             </div>
                         </div>
                     </form>
