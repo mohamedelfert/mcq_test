@@ -18,6 +18,7 @@
                                     <th>#</th>
                                     <th>{{ trans('admin.user_name') }}</th>
                                     <th>{{ trans('admin.user_email') }}</th>
+                                    <th>{{ trans('admin.provider') }}</th>
                                     <th>{{ trans('admin.user_status') }}</th>
                                     <th>{{ trans('admin.user_role') }}</th>
                                     <th>{{ trans('admin.control') }}</th>
@@ -32,6 +33,11 @@
                                     <td>{{ $i++ }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
+                                    <td>
+                                        <label class="badge badge-info">
+                                            {{ (!empty($user->provider) ? $user->provider : trans('admin.provider_msg')) }}
+                                        </label>
+                                    </td>
                                     <td>
                                         @if ($user->status == 'active')
                                             <label class="badge badge-success">{{ $user->status }}</label>
