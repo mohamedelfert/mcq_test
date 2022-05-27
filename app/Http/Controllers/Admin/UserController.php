@@ -80,7 +80,7 @@ class UserController extends Controller
             'status.required' => 'يجب اختيار حاله المستخدم',
             'role_name.required' => 'يجب اختيار صلاحيه للمستخدم'
         ];
-        $data = $this->validate($request, $rules, $validate_msg_ar);
+        $validation = $this->validate($request, $rules, $validate_msg_ar);
 
         $data = $request->all();
         $data['password'] = Hash::make($data['password']);
@@ -150,7 +150,7 @@ class UserController extends Controller
             'status.required' => 'يجب اختيار حاله المستخدم',
             'role_name.required' => 'يجب اختيار صلاحيه للمستخدم'
         ];
-        $data = $this->validate($request, $rules, $validate_msg_ar);
+        $validation = $this->validate($request, $rules, $validate_msg_ar);
 
         $data = $request->all();
         if (!empty($data['password'])) {

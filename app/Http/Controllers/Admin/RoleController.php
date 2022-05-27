@@ -67,9 +67,12 @@ class RoleController extends Controller
             'display_name.required' => 'يجب كتابه الاسم المعروض',
             'permission.required' => 'يجب اختيار صلاحيه واحده علي الاقل'
         ];
-        $data = $this->validate($request, $rules, $validate_msg_ar);
+        $validation = $this->validate($request, $rules, $validate_msg_ar);
 
-        $data = Role::create(['name' => $request->input('name'), 'display_name' => $request->input('display_name')]);
+        $data = Role::create([
+            'name' => $request->input('name'),
+            'display_name' => $request->input('display_name')
+        ]);
         $data->syncPermissions($request->input('permission'));
 
         toastr()->success(trans('messages.success'));
@@ -131,7 +134,7 @@ class RoleController extends Controller
             'display_name.required' => 'يجب كتابه الاسم المعروض',
             'permission.required' => 'يجب اختيار صلاحيه واحده علي الاقل'
         ];
-        $data = $this->validate($request, $rules, $validate_msg_ar);
+        $validation = $this->validate($request, $rules, $validate_msg_ar);
 
         $role = Role::findOrFail($id);
         $role->name = $request->input('name');
