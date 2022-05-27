@@ -42,12 +42,12 @@
             "App\\": "app/",
             "Database\\Seeders\\": "database/seeders/"
         },
+        "files": [
+            "app/Http/helper.php"
+        ],
         "classmap": [
             "database/seeds",
             "database/factories"
-        ],
-        "files": [
-            "App/Http/helper.php"
         ]
     },
     "autoload-dev": {
